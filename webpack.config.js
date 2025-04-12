@@ -11,7 +11,8 @@ module.exports = {
 
   // Выходной файл
   output: {
-    filename: './js/bundle.js'
+    filename: './js/bundle.js',
+    path: path.resolve(__dirname, 'dist'), // Добавьте путь для выходного файла
   },
 
   // Source maps для удобства отладки
@@ -43,12 +44,22 @@ module.exports = {
         ],
       },
 
+      // Обрабатываем обычные CSS файлы (например, Swiper)
+      {
+        test: /\.css$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+        ],
+      },
+
       // Подключаем шрифты из css
       {
         test: /\.(eot|ttf|woff|woff2)$/,
         use: [
           {
-            loader: 'file-loader?name=./fonts/[name].[ext]'
+            loader: 'file-loader',
+            options: { name: './fonts/[name].[ext]' }
           },
         ]
       },
@@ -58,16 +69,18 @@ module.exports = {
         test: /\.(svg|png|jpg|jpeg|webp)$/,
         use: [
           {
-            loader: 'file-loader?name=./static/[name].[ext]'
+            loader: 'file-loader',
+            options: { name: './static/[name].[ext]' }
           },
         ]
       },
     ],
   },
+  
   plugins: [
     // Подключаем файл html, стили и скрипты встроятся автоматически
     new HtmlWebpackPlugin({
-      title: 'Webpack 4 Starter',
+      title: 'CPS',
       template: './src/index.html',
       inject: true,
       minify: {
@@ -82,11 +95,10 @@ module.exports = {
     }),
 
     // Копируем картинки
-    new CopyWebpackPlugin([
-      {
-        from: './src/img',
-        to: 'img',
-      },
-    ])
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: './src/img', to: 'img' } // Замените на ваши пути
+      ],
+    })
   ],
 };
