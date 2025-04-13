@@ -1,6 +1,6 @@
-import '../scss/style.scss'
+import '../scss/style.scss';
 
-console.log('Works!')
+console.log('Works!');
 
 // Импортируйте стили Swiper
 import 'swiper/swiper-bundle.css';
@@ -10,44 +10,51 @@ import Swiper from 'swiper/bundle';
 
 // Инициализация Swiper после загрузки DOM
 document.addEventListener('DOMContentLoaded', function () {
-    const swiper = new Swiper('.swiper', {
-        // Опции Swiper
-        loop: true,
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-        pagination: {
-            el: '.swiper-pagination', // Элемент для пагинации
-            clickable: true, // Возможность клика по пагинации
-        },
-        breakpoints: {
-            120: {
-                slidesPerView: 2,
-                spaceBetween: 160, // 20px между слайдами на экранах шириной 640px и более
+    const swipers = document.querySelectorAll('.swiper'); // Получаем все элементы с классом .swiper
+
+    swipers.forEach(swiperElement => {
+        new Swiper(swiperElement, {
+            // Опции Swiper
+            loop: true,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
             },
-            700: {
-                slidesPerView: 3,
-                spaceBetween: 50, // 40px между слайдами на экранах шириной 1024px и более
+            pagination: {
+                el: '.swiper-pagination', // Элемент для пагинации
+                clickable: true, // Возможность клика по пагинации
             },
-        },
+            breakpoints: {
+                120: {
+                    slidesPerView: 2,
+                    spaceBetween: 160, // 20px между слайдами на экранах шириной 640px и более
+                },
+                700: {
+                    slidesPerView: 3,
+                    spaceBetween: 50, // 40px между слайдами на экранах шириной 1024px и более
+                },
+            },
+        });
     });
 });
 
-var showButton = document.querySelector('#block__link-list__show-button'); //кнопка Показать всё/Скрыть всё
-var showButtonImg = document.querySelector('#block__link-list__show-button__img'); //иконка рядом с кнопкой^
-var linkListItem = document.querySelectorAll('.block__link-list__li-hidden'); //скрытые элементы
-var isVisible = false; //проверка отображения
-
-const swiperContainer = document.querySelector('.swiper');
+var showButton = document.querySelector('#block__link-list__show-button'); // кнопка Показать всё/Скрыть всё
+var showButtonImg = document.querySelector('#block__link-list__show-button__img'); // иконка рядом с кнопкой^
+var linkListItem = document.querySelectorAll('.block__link-list__li-hidden'); // скрытые элементы
+var isVisible = false; // проверка отображения
 
 function checkWidth() {
-    if (window.innerWidth > 798) {
-        swiperContainer.style.display = 'none'; // Скрыть Swiper
-    } else {
-        swiperContainer.style.display = 'block'; // Показать Swiper
-    }
+    const swiperContainers = document.querySelectorAll('.swiper'); // Получаем все элементы с классом .swiper
+
+    swiperContainers.forEach(swiperContainer => {
+        if (window.innerWidth > 798) {
+            swiperContainer.style.display = 'none'; // Скрыть Swiper при ширине больше 798px
+        } else {
+            swiperContainer.style.display = 'block'; // Показать Swiper при ширине меньше или равной 798px
+        }
+    });
 }
+
 // Проверка ширины при загрузке страницы
 checkWidth();
 
@@ -73,7 +80,6 @@ checkScreenSize();
 // Добавляем обработчик события для изменения размера окна
 window.addEventListener('resize', checkScreenSize);
 
-
 showButton.addEventListener('click', function() {
     isVisible = !isVisible;
     console.log(linkListItem);
@@ -83,4 +89,4 @@ showButton.addEventListener('click', function() {
     showButton.textContent = isVisible ? 'Скрыть всё' : 'Показать всё'; 
     showButtonImg.href = isVisible ? './img/expand.svg' : './img/expanddown.svg';
     checkScreenSize();
-}) 
+});

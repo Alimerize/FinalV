@@ -15,7 +15,7 @@
 body {
   width: 100%;
   background-color: #F8F8F8;
-  font-family: "TTLakes-Regular";
+  font-family: 'TTLakes-Regular', sans-serif;
   color: #1B1C21;
   padding: 0px;
 }
@@ -124,7 +124,7 @@ img {
 
 .services__h {
   margin-left: 0px;
-  width: 233px;
+  width: 300px;
   height: 40px;
   font-size: 28px;
   font-weight: 700;
@@ -223,13 +223,64 @@ img {
 
 .swiper {
   width: 100%; 
-  height: 120px; 
+  min-height: 120px; 
 }
 
 .repair__h {
   margin-bottom: 20px;
 }
 
+/*REPAIR TYPE*/
+.repair-type {
+  width: 100%;
+  height: 288px;
+}
+
+.repair-type__list {
+  width: 100%;
+  display: flex;
+}
+
+.repair-type__link {
+  width: 240px;
+  height: 160px; 
+  background-color: #FFFFFF;
+  border: solid #EAEAEA 1px;
+  border-radius: 6px;  
+  margin: 8px 12px;
+}
+
+.repair-type__swiper { 
+  background-color: #FFFFFF;
+  border: solid #EAEAEA 1px;
+  border-radius: 6px; 
+  width: 240px; 
+}
+
+.repair-type__link-a {
+  width: 240px;
+  display: flex; 
+  flex-direction: column;
+}
+
+.repair-type__link-ph {
+  width: 240px;
+  height: 55px;
+  display: block;
+  margin: 16px;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -0.2px;
+}
+
+.repair-type__link-img {
+  align-self: self-end;
+  width: 40px;
+  height: 40px;
+  margin: 16px;
+}
+
+/*BLOCK LINK LIST*/
 .block__link-list {
   display: flex;
   width: 100%;
@@ -276,6 +327,30 @@ img {
   width: 88px;
 }
 
+/*PRICE*/
+.price-table {
+  display: grid;
+  width: 100%;
+}
+
+.bid-container {
+  display: flex;
+  align-items: center;
+}
+
+.price-bid {
+  display: flex; /* Включаем Flexbox */
+  align-items: center; /* Центрируем по вертикали */
+  height: 24px; 
+  font-weight: bold;
+  font-size: 16px;
+  letter-spacing: -0.2px;
+}
+
+.price-button {
+  height: 24px;
+}
+
 /*MEDIA*/
 
 @media (max-width: 768px) {
@@ -292,6 +367,14 @@ img {
   }
 } 
 
+@media (max-width: 799px) {
+  .block__link-list,
+  .block__link-list__group,
+  .repair-type__list {
+    display: none;
+  }
+}
+
 @media (min-width: 768px) {
   .services__content {
       display: flex;
@@ -303,6 +386,12 @@ img {
       width: 50%;
   }
 } 
+
+@media (max-width: 1080px) {
+  .repair-type__link:last-child {
+    display: none;
+  }
+}
 
 @media (max-width: 1440px) {
   .services__button-group {
