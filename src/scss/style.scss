@@ -303,11 +303,10 @@ img {
 
 /*BLOCK LINK LIST*/
 .block__link-list {
-  display: flex;
+  display: grid;
+  grid-template-columns: 266px 266px 266px 266px;
   width: 100%;
-  flex-wrap: wrap;
   overflow: auto;
-  flex-direction: row;
 }
 
 .block__link-list__li {
@@ -577,6 +576,9 @@ img {
 @media (max-width: 1080px) {
   .repair-type__link:last-child {
     display: none;
+  }
+  .block__link-list {
+    grid-template-columns: 266px 266px 266px;
   }
 }
 
