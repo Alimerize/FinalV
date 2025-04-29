@@ -46,7 +46,7 @@
             <div class="services__content__image"><img src="./img/Picture Copy.png"></div></div></div>
     <div class="repair">
         <div class="repair__h"><h2 class="repair__h__text">Ремонт техники различных брендов</h2></div>
-        <div class="swiper">
+        <div class="swiper first-swiper">
             <div class="swiper-wrapper">
                 <div class="swiper-slide"><div class="block__link-list__li"><button><svg class="block__link-list__li__svg-1"><image href="./img/lenovo.png"/></svg><svg class="block__link-list__li__svg-2"><image href="./img/go.svg"/></svg></button></div></div>
                 <div class="swiper-slide"><div class="block__link-list__li"><button><svg class="block__link-list__li__svg-1"><image href="./img/samsung.png"/></svg><svg class="block__link-list__li__svg-2"><image href="./img/go.svg"/></svg></button></div></div>
@@ -63,7 +63,7 @@
         <div class="block__link-list">
             <div class="block__link-list__li"><svg class="block__link-list__li__svg-1"><image href="./img/lenovo.png"/></svg><a><svg class="block__link-list__li__svg-2"><image href="./img/go.svg"/></svg></a></div>
             <div class="block__link-list__li"><svg class="block__link-list__li__svg-1"><image href="./img/samsung.png"/></svg><a><svg class="block__link-list__li__svg-2"><image href="./img/go.svg"/></svg></a></div>
-            <div class="block__link-list__li"><svg class="block__link-list__li__svg-1"><image href="./img/apple.png"/></svg><a><svg class="block__link-list__li__svg-2"><image href="./img/go.svg"/></svg></a></div>
+            <div class="block__link-list__li block__link-list__li-3"><svg class="block__link-list__li__svg-1"><image href="./img/apple.png"/></svg><a><svg class="block__link-list__li__svg-2"><image href="./img/go.svg"/></svg></a></div>
             <div class="block__link-list__li"><svg class="block__link-list__li__svg-1"><image href="./img/viewsonic.png"/></svg><a><svg class="block__link-list__li__svg-2"><image href="./img/go.svg"/></svg></a></div>
             <div class="block__link-list__li"><svg class="block__link-list__li__svg-1"><image href="./img/bosch.png"/></svg><a><svg class="block__link-list__li__svg-2"><image href="./img/go.svg"/></svg></a></div>
             <div class="block__link-list__li"><svg class="block__link-list__li__svg-1"><image href="./img/hp.png"/></svg><a><svg class="block__link-list__li__svg-2"><image href="./img/go.svg"/></svg></a></div>
@@ -73,11 +73,11 @@
             <div class="block__link-list__li block__link-list__li-hidden hidden"><svg class="block__link-list__li__svg-1"><image href="./img/samsung.png"/></svg><a><svg class="block__link-list__li__svg-2"><image href="./img/go.svg"/></svg></a></div>
             <div class="block__link-list__li block__link-list__li-hidden hidden"><svg class="block__link-list__li__svg-1"><image href="./img/apple.png"/></svg><a><svg class="block__link-list__li__svg-2"><image href="./img/go.svg"/></svg></a></div>
         </div>
-        <div class="services__content__button"><svg class="read-next block__link-list__button"><image id="block__link-list__show-button__img" href="./img/expand.svg"/></svg>Показать всё</div>
+        <button id="block__link-list__show-button" class="services__content__button"><svg class="read-next block__link-list__button"><image id="block__link-list__show-button__img" href="./img/expand.svg"/></svg>Показать всё</button>
     </div>
     <div class="repair-type">
       <div class="repair__h"><h2 class="repair__h__text">Ремонт различных видов техники</h2></div>
-      <div class="swiper">
+      <div class="swiper second-swiper">
         <div class="swiper-wrapper">
             <div class="swiper-slide"><a class="repair-type__link-a  repair-type__swiper"><p class="repair-type__link-ph">Ремонт ноутбуков</p><svg class="repair-type__link-img"><image href="./img/go.svg"/></svg></a></div>
             <div class="swiper-slide"><a class="repair-type__link-a  repair-type__swiper"><p class="repair-type__link-ph">Ремонт планшетов</p><svg class="repair-type__link-img"><image href="./img/go.svg"/></svg></a></div>
@@ -90,7 +90,7 @@
             <div class="swiper-slide"><a class="repair-type__link-a  repair-type__swiper"><p class="repair-type__link-ph">Ремонт мониторов</p><svg class="repair-type__link-img"><image href="./img/go.svg"/></svg></a></div>
         </div>
         <div class="swiper-pagination"></div>
-    </div>
+      </div>
       <div class="repair-type__list">
         <div class="repair-type__link"><a class="repair-type__link-a"><p class="repair-type__link-ph">Ремонт ноутбуков</p><svg class="repair-type__link-img"><image href="./img/go.svg"/></svg></a></div>
         <div class="repair-type__link"><a class="repair-type__link-a"><p class="repair-type__link-ph">Ремонт планшетов</p><svg class="repair-type__link-img"><image href="./img/go.svg"/></svg></a></div>
@@ -101,16 +101,32 @@
     </div> 
     <div class="price-block">
       <div class="repair__h"><h2 class="repair__h__text">Цены на услуги</h2></div>
-      <div class="price-table">
+      <div class="swiper third-swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><div class="price-group__swiper"><div class="price-group"><p class="price-group__h">Ремонтные услуги</p><p class="price-group__content">Диагностика</p></div><div class="price-group"><p class="price-group__h">Цена</p><p class="price-group__content">Бесплатно</p></div><div class="price-group"><div class="price-group__left"><p class="price-group__h">Срок</p><p class="price-group__content">30 мин</p></div><div class="price-group__right"><div class="price-button">Заказать<svg class="cell-button cell-button__img"><image href="./img/goside.svg"/></svg></div></div></div></div></div>
+            <div class="swiper-slide"><div class="price-group__swiper"><div class="price-group"><p class="price-group__h">Ремонтные услуги</p><p class="price-group__content">Замена дисплея</p></div><div class="price-group"><p class="price-group__h">Цена</p><p class="price-group__content">1 000 ₽</p></div><div class="price-group"><div class="price-group__left"><p class="price-group__h">Срок</p><p class="price-group__content">30-120 мин</p></div><div class="price-group__right"><div class="price-button">Заказать<svg class="cell-button cell-button__img"><image href="./img/goside.svg"/></svg></div></div></div></div></div>
+            <div class="swiper-slide"><div class="price-group__swiper"><div class="price-group"><p class="price-group__h">Ремонтные услуги</p><p class="price-group__content">Замена полифонического динамика</p></div><div class="price-group"><p class="price-group__h">Цена</p><p class="price-group__content">1 000 ₽</p></div><div class="price-group"><div class="price-group__left"><p class="price-group__h">Срок</p><p class="price-group__content">30-120 мин</p></div><div class="price-group__right"><div class="price-button">Заказать<svg class="cell-button cell-button__img"><image href="./img/goside.svg"/></svg></div></div></div></div></div>
+            <div class="swiper-slide"><div class="price-group__swiper"><div class="price-group"><p class="price-group__h">Ремонтные услуги</p><p class="price-group__content">Тестирование с выдачей технического заключения</p></div><div class="price-group"><p class="price-group__h">Цена</p><p class="price-group__content">1 000 ₽</p></div><div class="price-group"><div class="price-group__left"><p class="price-group__h">Срок</p><p class="price-group__content">30-120 мин</p></div><div class="price-group__right"><div class="price-button">Заказать<svg class="cell-button cell-button__img"><image href="./img/goside.svg"/></svg></div></div></div></div></div>
+            <div class="swiper-slide"><div class="price-group__swiper"><div class="price-group"><p class="price-group__h">Ремонтные услуги</p><p class="price-group__content">Замена программного обеспечения</p></div><div class="price-group"><p class="price-group__h">Цена</p><p class="price-group__content">1 000 ₽</p></div><div class="price-group"><div class="price-group__left"><p class="price-group__h">Срок</p><p class="price-group__content">30-120 мин</p></div><div class="price-group__right"><div class="price-button">Заказать<svg class="cell-button cell-button__img"><image href="./img/goside.svg"/></svg></div></div></div></div></div>
+        </div>
+        <div class="swiper-pagination"></div>
       </div>
-      <pre>    Все цены указаны с учетом НДС. Стоимость ремонта указана
+      <div class="price-table">
+        <div class="price-table__header">Ремонтные услуги</div><div class="price-table__header">Цена</div><div class="price-table__header">Срок</div><div class="price-table__header"></div>
+        <div class="cell cell__marg-left">Диагностика</div><div class="cell">Бесплатно</div><div class="cell">30 мин</div><div class="cell cell__marg-right"><div class="cell-button">Заказать<svg class="cell-button cell-button__img"><image href="./img/goside.svg"/></svg></div></div>
+        <div class="cell cell__marg-left">Замена дисплея</div><div class="cell">1 000 ₽</div><div class="cell">30-120 мин</div><div class="cell cell__marg-right"><div class="cell-button">Заказать<svg class="cell-button cell-button__img"><image href="./img/goside.svg"/></svg></div></div>
+        <div class="cell cell__marg-left">Замена полифонического динамика</div><div class="cell">1 000 ₽</div><div class="cell">30-120 мин</div><div class="cell cell__marg-right"><div class="cell-button">Заказать<svg class="cell-button cell-button__img"><image href="./img/goside.svg"/></svg></div></div>
+        <div class="cell cell__marg-left">Тестирование с выдачей технического заключения</div><div class="cell">1 000 ₽</div><div class="cell">30-120 мин</div><div class="cell cell__marg-right"><div class="cell-button">Заказать<svg class="cell-button cell-button__img"><image href="./img/goside.svg"/></svg></div></div>
+        <div class="cell cell__marg-left">Замена программного обеспечения</div><div class="cell">1 000 ₽</div><div class="cell">30-120 мин</div><div class="cell cell__marg-right"><div class="cell-button">Заказать<svg class="cell-button cell-button__img"><image href="./img/goside.svg"/></svg></div></div>
+      </div>
+      <p class="price-table__info"><pre>    Все цены указаны с учетом НДС. Стоимость ремонта указана
     на единичную услугу. Для получения коммерческого
-    предложения на постоянное обслуживание, оставьте заявку.</pre>
-      <div class="bid-container"><button class="price-bid">Получить коммерческое предложение<svg class="price-button"><image href="./img/more.svg"></image></svg></button></div>
+    предложения на постоянное обслуживание, оставьте заявку.</pre></p>
+      <div class="bid-container"><button class="price-bid">Получить коммерческое предложение<svg class="price-block__button"><image href="./img/more.svg"></image></svg></button></div>
     </div>
 </main>
 <footer>
-
+  <div class="footer footer__copyright"><a><p>© 2019 CPS<br>Разработано командой Apesong</p></a></div><div class="footer footer__confidentiality"><a><p>Политика конфиденциальности</p></a></div><div class="footer footer__info"><a><p>Информация, размещенная на данной странице, не является публичной офертой</p></a></div>
 </footer>
   </body>
 </html>

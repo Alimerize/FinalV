@@ -10,31 +10,106 @@ import Swiper from 'swiper/bundle';
 
 // Инициализация Swiper после загрузки DOM
 document.addEventListener('DOMContentLoaded', function () {
-    const swipers = document.querySelectorAll('.swiper'); // Получаем все элементы с классом .swiper
+    
+    // Первый слайдер
+    const firstSwiper = new Swiper('.first-swiper', {
+        loop: true,
+        navigation: {
+            nextEl: '.first-swiper .swiper-button-next',
+            prevEl: '.first-swiper .swiper-button-prev',
+        },
+        pagination: {
+            el: '.first-swiper .swiper-pagination',
+            clickable: true,
+        },
+        breakpoints: {
+            120: {
+                slidesPerView: 1,
+                spaceBetween: 20,
+            },
+            250: {
+                slidesPerView: 1,
+                spaceBetween: 140,
+            },
+            350: {
+                slidesPerView: 2,
+                spaceBetween: 180,
+            },
+            600: {
+                slidesPerView: 3,
+                spaceBetween: 180,
+            },
+            700: {
+                slidesPerView: 3,
+                spaceBetween: 80,
+            },
+        },
+    });
 
-    swipers.forEach(swiperElement => {
-        new Swiper(swiperElement, {
-            // Опции Swiper
-            loop: true,
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
+    // Второй слайдер
+    const secondSwiper = new Swiper('.second-swiper', {
+        loop: true,
+        navigation: {
+            nextEl: '.second-swiper .swiper-button-next',
+            prevEl: '.second-swiper .swiper-button-prev',
+        },
+        pagination: {
+            el: '.second-swiper .swiper-pagination',
+            clickable: true,
+        },
+        breakpoints: {
+            120: {
+                slidesPerView: 1,
+                spaceBetween: 20,
             },
-            pagination: {
-                el: '.swiper-pagination', // Элемент для пагинации
-                clickable: true, // Возможность клика по пагинации
+            250: {
+                slidesPerView: 1,
+                spaceBetween: 140,
             },
-            breakpoints: {
-                120: {
-                    slidesPerView: 2,
-                    spaceBetween: 160, // 20px между слайдами на экранах шириной 640px и более
-                },
-                700: {
-                    slidesPerView: 3,
-                    spaceBetween: 50, // 40px между слайдами на экранах шириной 1024px и более
-                },
+            350: {
+                slidesPerView: 2,
+                spaceBetween: 180,
             },
-        });
+            600: {
+                slidesPerView: 3,
+                spaceBetween: 180,
+            },
+            700: {
+                slidesPerView: 3,
+                spaceBetween: 80,
+            },
+        },
+    });
+
+    // Третий слайдер
+    const thirdSwiper = new Swiper('.third-swiper', {
+        loop: true,
+        navigation: {
+            nextEl: '.third-swiper .swiper-button-next',
+            prevEl: '.third-swiper .swiper-button-prev',
+        },
+        pagination: {
+            el: '.third-swiper .swiper-pagination',
+            clickable: true,
+        },
+        breakpoints: {
+            250: {
+                slidesPerView: 1,
+                spaceBetween: 25,
+            },
+            400: {
+                slidesPerView: 2,
+                spaceBetween: 240,
+            },
+            650: {
+                slidesPerView: 3,
+                spaceBetween: 290,
+            },
+            900: {
+                slidesPerView: 4,
+                spaceBetween: 40,
+            },
+        },
     });
 });
 
@@ -59,18 +134,23 @@ function checkWidth() {
 checkWidth();
 
 // Проверка ширины при изменении размера окна
-window.addEventListener('resize', checkWidth);
+// Добавляем обработчик события resize для правильной функции
+window.addEventListener('resize', checkScreenSize);
 
 function checkScreenSize() {
     const li7 = document.querySelector('.block__link-list__li-7');
     const li8 = document.querySelector('.block__link-list__li-8');
 
-    if (window.innerWidth > 1120) {
-        if (li7) li7.classList.remove('hidden');
-        if (li8) li8.classList.remove('hidden');
+    if (window.innerWidth > 1080) {
+        li7.classList.remove('hidden');
+        li8.classList.remove('hidden');
+        li7.classList.remove('block__link-list__li-hidden');
+        li8.classList.remove('block__link-list__li-hidden');
     } else {
-        if (li7) li7.classList.add('hidden');
-        if (li8) li8.classList.add('hidden');
+        li7.classList.add('hidden');
+        li8.classList.add('hidden');
+        li7.classList.add('block__link-list__li-hidden');
+        li8.classList.add('block__link-list__li-hidden');
     }
 }
 
@@ -83,10 +163,18 @@ window.addEventListener('resize', checkScreenSize);
 showButton.addEventListener('click', function() {
     isVisible = !isVisible;
     console.log(linkListItem);
+    
     linkListItem.forEach(function(item) {
         item.style.display = isVisible ? 'block' : 'none'; // Показываем или скрываем элементы
+        showButtonImg.setAttribute('href', isVisible ? './img/expand.svg' : './img/expand.svg');
     });
+    showButtonImg.setAttribute('href', isVisible ? './img/expand.svg' : './img/expand.svg');
     showButton.textContent = isVisible ? 'Скрыть всё' : 'Показать всё'; 
-    showButtonImg.href = isVisible ? './img/expand.svg' : './img/expanddown.svg';
-    checkScreenSize();
+    
+    // Изменяем источник изображения правильно
+    showButtonImg.setAttribute('href', isVisible ? './img/expand.svg' : './img/expand.svg');
+    // Или если требуется xlink:
+    // showButtonImg.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', isVisible ? './img/expand.svg' : './img/expanddown.svg');
+
+    checkScreenSize(); // Убедитесь, что эта функция определена
 });
