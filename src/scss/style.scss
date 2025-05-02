@@ -258,11 +258,18 @@ img {
 }
 
 .repair-type__list {
+  display: grid;
+  grid-template-columns: 266px 266px 266px 266px;
   width: 100%;
-  display: flex;
+  overflow: auto;
+}
+
+.repair-type {
+  display: block;
 }
 
 .repair-type__link {
+  display: block;
   width: 240px;
   height: 160px; 
   background-color: #FFFFFF;
@@ -335,7 +342,13 @@ img {
 
 .block__link-list__button {
   height: 24px;
-  width: 88px;
+  width: auto;
+  display: flex;
+  svg {
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;;
+  }
 }
 
 .block__link-list__group {
@@ -546,13 +559,19 @@ img {
   }
 } 
 
-@media (max-width: 799px) {
+@media (max-width: 815px) {
   .price-table,
   .block__link-list,
   .block__link-list__group,
-  .repair-type__list {
+  .repair-type__list,
+  .services__content__button,
+  #block__link-list__show-button {
     display: none;
   }
+}
+
+@media (min-width: 815px) {
+
 }
 
 @media (min-width: 768px) {
@@ -566,12 +585,6 @@ img {
       width: 50%;
   }
 } 
-
-@media (min-width: 1070px) and (max-width: 1120) {
-  .block__link-list__li-3 ::after {
-    content: attr("");
-  }
-}
 
 @media (max-width: 1080px) {
   .repair-type__link:last-child {
