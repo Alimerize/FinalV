@@ -4,25 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Webpack 4 Starter</title>
-  <link href="style.css" rel="stylesheet"></head>
+    <title>CPS</title>
+  <script defer="defer" src="./js/bundle.js"></script><link href="style.css" rel="stylesheet"></head>
   <body>
     <header>
-      <div class="header__icon-group header__icon-group-1">
-          <a class="icon"><svg class="icon icon-1"><image href="./img/burger.svg"/></svg></a>
-          <div class="header__dividing-line dividing-line-1 icon"></div>
-          <a class="icon">    <svg class="logo icon-2"><image href="./img/Group.svg"/></svg></a></div>
-      <div class="header__icon-group header__icon-group__right-group">
-      <div class="header__icon-group header__icon-group-2"> 
-          <a class="icon"><svg class="icon icon-3"><image href="./img/call.svg"/> </svg></a>
-          <a class="icon"><svg class="icon icon-4"><image href="./img/chat.svg"/></svg></a>
-          <a class="icon"><svg class="icon icon-5"><image href="./img/profile.svg"/></svg></a></div>
-      <div class="header__icon-group header__icon-group-3"> 
-          <div class="header__dividing-line dividing-line-2 icon"></div>
-          <a class="icon"><svg class="icon icon-6"><image href="./img/repair.svg"/></svg></a>
-          <a class="icon"><svg class="icon icon-7"><image href="./img/checkstatus.svg"/></svg></a></div></div>
-  </header>
-    <img src="./img/search.svg" alt="Webpack Logo" width="200px">
-    <h3>Услуги и сервисы </h3>
-  <script type="text/javascript" src="./js/bundle.js"></script></body>
+      <div class="header__icon-group__right">
+        <button class="header__button"><svg><image href="./img/burger.svg"/></svg></button>
+      </div>
+      <div class="header__icon-group__left">
+        <svg class="header__logo"><image href="./img/logo.svg"/></svg>
+        <div class="header__line"></div>
+        <button class="header__button"><svg><image href="./img/tools.svg"/></svg></button>
+        <button class="header__button"><svg><image href="./img/search.svg"/></svg></button></div></header>
+    
+    <main>
+      <div class="main__title"><div></div><h1>Услуги и сервисы</h1></div>
+      <nav class="main__nav"><a>Ремонтируемые бренды</a><a>Дополнительные услуги</a><a>Цены на услуги</a><a>Адреса сервисных центров</a><a>Специальные цены</a><a>Отзывы</a></nav>
+      <div class="main__content"><div>Мы являемся авторизованным сервисным центром по ремонту техники Dell. Только у нас вы можете отремонтировать свой ноутбук Dell с официальной гарантией производителя.</div>
+      <button><svg><image href="./img/button-down.svg"/></svg>Читать далее</button><img src="./img/photo.png"></div>
+      <div class="main__chapter"><h2>Ремонт техники различных брендов</h2></div>
+      <div class="swiper-container main__brands">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">1</div>
+          <div class="swiper-slide">2</div>
+          <div class="swiper-slide">3</div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+      
+    </main>
+    <footer></footer>
+  </body>
 </html>
